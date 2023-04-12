@@ -1,0 +1,19 @@
+{
+	"files.associations": {
+		"types.h": "c",
+		"stat.h": "c",
+		"user.h": "c",
+		"fs.h": "c",
+		"param.h": "c",
+		"climits": "c",
+		"cmath": "c",
+		"cstdarg": "c",
+		"cstdio": "c",
+		"cstdlib": "c",
+		"type_traits": "c",
+		"limits": "c",
+		"*.tcc": "c",
+		"cstdint": "c",
+		"typeinfo": "c"
+	}
+}
