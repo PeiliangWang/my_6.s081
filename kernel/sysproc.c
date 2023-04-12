@@ -6,6 +6,7 @@
 #include "memlayout.h"
 #include "spinlock.h"
 #include "proc.h"
+#include "sysinfo.h"
 
 // Add a sys_trace() function in kernel/sysproc.c 
 // data: 4/12
@@ -18,6 +19,23 @@ sys_trace(void) {
   if (argaddr(0, &p) < 0) 
     return -1;
   myproc()->mask = p;
+  return 0;
+}
+
+uint64 
+sys_sysinfo(void) {
+  // addr is a virtual address, point to struct sysinfo
+  uint64 addr;
+  struct sysinfo info;
+  struct proc *p = myproc();
+
+  if (argaddr(0, &addr) < 0) 
+    return -1;
+  info.freemem = freemem();
+  info.nproc = nproc();
+
+  if (copyout(p->pagetable, addr, (char *)&info, sizeof(info)) < 0) 
+    return -1;
   return 0;
 }
 

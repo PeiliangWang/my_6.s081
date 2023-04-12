@@ -23,6 +23,27 @@ struct {
   struct run *freelist;
 } kmem;
 
+// Return the number of bytes of free memory
+uint64
+freemem(void) {
+  struct run *r;
+  // 计数还有多少空闲的 内存页
+  uint64 num = 0;
+  // add lock
+  acquire(&(kmem.lock));
+  // r point to first free page
+  r = kmem.freelist;
+  // while r is not null
+  while(r) {
+    num++;
+    r = r->next;
+  }
+  // release lock 
+  release(&(kmem.lock));
+  // num_page * page_size(byte)
+  return num * PGSIZE;
+}
+
 void
 kinit()
 {
