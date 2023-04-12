@@ -1,3 +1,12 @@
+
+//description:
+// Write a simple version of the UNIX xargs program: read 
+// lines from the standard input and run a command for each line, 
+// supplying the line as arguments to the command. Your solution
+//  should be in the file user/xargs.c.
+// data : 4/11
+// author : wpl
+
 #include "kernel/types.h"
 #include "kernel/stat.h"
 #include "kernel/param.h"

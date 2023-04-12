@@ -1,3 +1,11 @@
+//description:
+// Write a concurrent version of prime sieve using pipes. 
+// This idea is due to Doug McIlroy, inventor of Unix pipes. 
+// The picture halfway down this page and the surrounding text 
+// explain how to do it. Your solution should be in the file user/primes.c.
+// data : 4/10
+// author : wpl
+
 #include "kernel/types.h"
 #include "kernel/stat.h"
 #include "user/user.h"

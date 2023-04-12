@@ -1,3 +1,11 @@
+
+//description:
+// Write a simple version of the UNIX find program: 
+// find all the files in a directory tree with a 
+// specific name. Your solution should be in the file user/find.c.
+// data : 4/11
+// author : wpl
+
 #include "kernel/types.h"
 #include "kernel/stat.h"
 #include "user/user.h"
